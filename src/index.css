@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: Inter;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-slate-50 dark:bg-slate-900;
+}
+
+nav {
+  @apply flex justify-between px-2 py-1 border-b border-gray-300 dark:border-gray-500 fixed w-full top-0 z-40 bg-slate-50 dark:bg-slate-900;
+}
+
+h1 {
+  @apply dark:text-slate-200 text-2xl font-medium text-center;
+}
+
+li {
+  @apply dark:text-slate-200;
+}
+
+th {
+  @apply bg-slate-200 text-center dark:bg-slate-600;
+}
+
+th,
+td {
+  @apply px-2 py-2 dark:text-slate-200 border border-slate-400;
+}
+
+select {
+  @apply block;
+}
+
+option,
+select {
+  @apply dark:text-slate-200 dark:bg-slate-600 bg-slate-200;
+}
+
+.nav_button {
+  @apply text-slate-900 hover:border-b-4 hover:border-slate-300 dark:hover:border-slate-200 dark:text-slate-200 text-center w-[5%] mx-1 px-2 py-2  text-[16px] font-semibold;
+}
+
+.pagination {
+  @apply text-sm dark:text-slate-200 font-semibold px-4 py-2 hover:border-b-[3px];
+}
+
+.container_page {
+  @apply flex flex-col justify-center py-2 px-4 space-y-2 relative;
+}
+
+.user_box {
+  @apply hover:bg-slate-200 dark:hover:bg-slate-600 hover:rounded-md flex items-center space-x-2 px-2 cursor-pointer;
+}
+
+.profile_box {
+  @apply absolute right-12 top-12 bg-slate-100 dark:bg-slate-600 p-3 rounded-md border border-slate-400 dark:border-slate-400;
+}
+
+.profile_input {
+  @apply px-2 border border-slate-400 focus:outline-none focus:ring-1 dark:focus:ring-slate-200 rounded-md dark:bg-gray-900 dark:text-slate-200;
+}
+
+.profile_button {
+  @apply p-1 rounded-md bg-slate-100 dark:bg-slate-900 border border-slate-400  hover:bg-slate-300;
+}
+
+.darkmode_button {
+  @apply hover:bg-slate-200 dark:hover:bg-slate-600 rounded-md px-2;
+}
+
+.text_pageError {
+  @apply text-4xl uppercase font-bold p-2 text-gray-700;
+}
