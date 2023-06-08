@@ -7,7 +7,7 @@ This is a single page application built with React and Tailwind
 - Show data from API
 - Filter data by Key
 - Short data
-- Manage global state inside /store directory
+- Manage global state inside /context directory
 - manage config API inside /config directory
 - Routing page by React router
 - Dark mode
