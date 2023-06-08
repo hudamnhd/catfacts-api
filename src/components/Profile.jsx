@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react";
-import { AppContext } from "../store";
+import { AppContext } from "../context";
 import { FaSave } from "react-icons/fa";
 
 const Profile = () => {

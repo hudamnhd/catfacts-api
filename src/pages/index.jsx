@@ -1,5 +1,5 @@
 import Home from "./Home";
-import CatBreeds from "./CatBreeds";
-import ErrorPage from "./ErrorPage";
+import Breeds from "./Breeds";
+import Error from "./Error";
 
-export { Home, CatBreeds, ErrorPage };
+export { Home, Breeds, Error };

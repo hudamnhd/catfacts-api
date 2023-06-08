@@ -1,12 +1,11 @@
 import { useEffect, useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Profile } from "../components/";
-import { AppContext } from "../store";
+import { AppContext } from "../context";
 import { FaMoon, FaSun, FaGithub } from "react-icons/fa";
 
 const Navbar = () => {
   const location = useLocation();
-  const navigate = useNavigate();
   const {
     name,
     toggle,
@@ -21,39 +20,23 @@ const Navbar = () => {
 
   useEffect(() => {
     document.title = "Cat Breeds";
-    if (location.pathname === "/catbreeds/") {
-      navigate(location.pathname + "page-1");
-    }
-
-    const pathname = location.pathname;
-    if (pathname.startsWith("/catbreeds")) {
-      setActive("Breeds");
-    } else {
-      setActive("Home");
-    }
+    const pathname = location.pathname.split("/")[1];
+    setActive(pathname);
     // eslint-disable-next-line
   }, [location]);
-
-  useEffect(() => {
-    if (theme === "dark") {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  }, [theme]);
 
   return (
     <nav>
       <div className="py-1">
         {[
-          ["Home", "/"],
-          ["Breeds", `/catbreeds/page-${currentPageBreed}`],
-        ].map(([title, url]) => (
+          ["Home", "/", ""],
+          ["Breeds", `/catbreeds/page-${currentPageBreed}`, "catbreeds"],
+        ].map(([title, url, path]) => (
           <Link
             key={url}
             to={url}
             className={` ${
-              active === title && "border-b-4 border-indigo-400"
+              active === path && "border-b-4 border-indigo-400"
             } nav_button`}
             onClick={() => setActive(title)}
           >

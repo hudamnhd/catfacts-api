@@ -1,4 +1,6 @@
-import React, { createContext, useState, useRef } from "react";
+import React, { createContext, useState, useRef, useEffect } from "react";
+import { getUniqueOptions } from "../utils/helper";
+
 export const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
@@ -8,7 +10,6 @@ export const AppProvider = ({ children }) => {
   const [toggle, setToggle] = useState(false);
   const [isProfileVisible, setProfileVisible] = useState(false);
   const [active, setActive] = useState(null);
-  // Page Bread State and function
   const [breedsData, setBreedsData] = useState(null);
   const [currentPageBreed, setCurrentPageBreed] = useState(1);
   const [loadingData, setLoadingData] = useState(false);
@@ -26,6 +27,16 @@ export const AppProvider = ({ children }) => {
     currentPageBreed !== breedsData?.from && currentPageBreed - 1;
   const nextPage =
     currentPageBreed !== breedsData?.last_page && currentPageBreed + 1;
+  const breedOptions = getUniqueOptions(breedsData?.data, "breed");
+  const countryOptions = getUniqueOptions(breedsData?.data, "country");
+  const originOptions = getUniqueOptions(breedsData?.data, "origin");
+  const coatOptions = getUniqueOptions(breedsData?.data, "coat");
+  const patternOptions = getUniqueOptions(breedsData?.data, "pattern");
+
+  useEffect(() => {
+    const classDark = document.documentElement.classList;
+    theme === "dark" ? classDark.add("dark") : classDark.remove("dark");
+  }, [theme]);
 
   return (
     <AppContext.Provider
@@ -68,6 +79,11 @@ export const AppProvider = ({ children }) => {
         nextPage,
         sortDirection,
         setSortDirection,
+        breedOptions,
+        countryOptions,
+        originOptions,
+        coatOptions,
+        patternOptions,
       }}
     >
       {children}

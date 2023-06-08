@@ -21,7 +21,7 @@ nav {
 }
 
 h1 {
-  @apply dark:text-slate-200 text-2xl font-medium text-center;
+  @apply dark:text-slate-200 text-2xl font-semibold uppercase text-center;
 }
 
 li {
@@ -29,21 +29,20 @@ li {
 }
 
 th {
-  @apply bg-slate-200 text-center dark:bg-slate-600;
+  @apply bg-slate-300 text-center dark:bg-slate-600 px-2 py-2 dark:text-slate-200;
 }
 
-th,
 td {
-  @apply px-2 py-2 dark:text-slate-200 border border-slate-400;
-}
-
-select {
-  @apply block;
+  @apply px-2 py-2 dark:text-slate-200 border-b border-l border-slate-400 w-[20%];
 }
 
 option,
 select {
-  @apply dark:text-slate-200 dark:bg-slate-600 bg-slate-200;
+  @apply dark:text-slate-200 dark:bg-slate-600 bg-slate-300;
+}
+
+select {
+  @apply flex flex-1 font-thin  dark:hover:text-slate-400 h-fit focus:outline-none cursor-pointer;
 }
 
 .nav_button {
@@ -55,7 +54,7 @@ select {
 }
 
 .container_page {
-  @apply flex flex-col justify-center py-2 px-4 space-y-2 relative;
+  @apply flex flex-col justify-center py-2 px-4 space-y-2 mt-10 relative;
 }
 
 .user_box {
@@ -80,4 +79,15 @@ select {
 
 .text_pageError {
   @apply text-4xl uppercase font-bold p-2 text-gray-700;
+}
+.main_feed {
+  @apply z-0 mx-auto w-2/3 relative flex flex-col gap-6 py-10 pl-6 before:absolute before:top-0 before:left-6 before:h-full before:border before:-translate-x-1/2 before:border-slate-200 dark:before:border-gray-600 before:border-dashed  after:absolute after:top-6 after:left-6 after:bottom-6 after:border after:-translate-x-1/2 after:border-slate-200 dark:after:border-gray-600 border rounded-lg dark:border-gray-600;
+}
+
+.sub_feed {
+  @apply relative pl-6 border dark:border-slate-600 rounded-r-md flex w-fit py-2 px-6;
+}
+
+.span_feed {
+  @apply absolute left-0 z-10 flex items-center justify-center w-6 h-6 -translate-x-1/2 rounded-full text-slate-700 ring-2 ring-white dark:ring-gray-500 bg-slate-200  dark:bg-slate-900;
 }
