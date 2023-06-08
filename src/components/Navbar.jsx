@@ -1,11 +1,11 @@
 import { useEffect, useContext } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Profile } from "../components/";
 import { AppContext } from "../context";
 import { FaMoon, FaSun, FaGithub } from "react-icons/fa";
 
 const Navbar = () => {
-  const location = useLocation();
+  const path = window.location.pathname;
   const {
     name,
     toggle,
@@ -20,10 +20,10 @@ const Navbar = () => {
 
   useEffect(() => {
     document.title = "Cat Breeds";
-    const pathname = location.pathname.split("/")[1];
+    const pathname = path.split("/")[1];
     setActive(pathname);
     // eslint-disable-next-line
-  }, [location]);
+  }, [path]);
 
   return (
     <nav>

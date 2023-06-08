@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import { AppContext } from "../context";
 import pageTitle from "../utils/pageTitle";
-
 import { FaGithub } from "react-icons/fa";
+
 const Home = () => {
   pageTitle("Home");
   const { name } = useContext(AppContext);
@@ -21,7 +21,6 @@ const Home = () => {
           ["API configuration file inside /src/config"],
           ["Manage function inside /src/utils"],
           ["Using optional chaining before mapping data"],
-          ["Using useLocate to get path url"],
           ["Using regex to validate url parameter"],
           ["Conditional rendering when data not found"],
           ["Added feature sort and filter by all key in page Breeds"],
